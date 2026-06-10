@@ -1,0 +1,39 @@
+services:
+  - type: web
+    name: timelyx-backend
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: FRONTEND_BASE_URL
+        value: https://timely-x-frontend.vercel.app
+      - key: CORS_ALLOWED_ORIGINS
+        value: https://timely-x-frontend.vercel.app
+      - key: RESET_PASSWORD_EXPIRES_MINUTES
+        value: "15"
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: GOOGLE_REDIRECT_URI
+        sync: false
+      - key: MICROSOFT_CLIENT_ID
+        sync: false
+      - key: MICROSOFT_CLIENT_SECRET
+        sync: false
+      - key: MICROSOFT_TENANT_ID
+        sync: false
+      - key: MICROSOFT_REDIRECT_URI
+        sync: false
+      - key: GMAIL_USER
+        sync: false
+      - key: GMAIL_PASSWORD
+        sync: false
+      - key: CONTACT_RECEIVER_EMAIL
+        sync: false
